@@ -1,10 +1,12 @@
 import React, { useRef, useState } from 'react';
 import './App.css';
 
+
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/analytics';
+import 'firebase/database';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
@@ -22,7 +24,17 @@ firebase.initializeApp({
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 const analytics = firebase.analytics();
+const database = firebase.database();
 
+// Example of reading data from the database
+database.ref('users').once('value')
+  .then((snapshot) => {
+    const data = snapshot.val();
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error('Error fetching data:', error);
+  });
 
 function App() {
 

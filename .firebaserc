@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "fireship-demos"
-  }
+    "default": "fireship-demos",
+    "build": "chatroom-76365"
+  },
+  "targets": {},
+  "etags": {}
 }

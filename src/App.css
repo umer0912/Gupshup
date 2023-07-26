@@ -118,6 +118,7 @@ button:disabled {
   background: rgb(0, 0, 0);
   max-width: 400px;
   margin: 0 auto;
+  padding:2%;
    
 }
 
